@@ -1,210 +1,390 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+/* html {
+  font-size: 100%; 1 rem = 16px;
+  10 / 16 = 0.625; 0.625 x 100% = 62.5%;
+  font-size: 62.5%; 1rem = 10px;
+} */
+
+html {
+  font-size: 62.5%; /* 1 rem = 10px */
+}
+
+@media (max-width: 1280px) {
+  html {
+    font-size: 50%;
+  }
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .primary-btn {
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    background-color: #16a34a;
-    padding: 10px 20px;
-    border-radius: 7px;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: #16a34a;
+  padding: 1.2rem 2rem;
+  border-radius: 7px;
+}
+.primary-btn:hover {
+  background-color: #c9c1c1;
+  color: #16a34a;
+}
+
+@media (max-width: 480px) {
+  .nav-btn {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  align-items: center;
 }
 
 .logo-wrapper {
-    display: flex;
-    gap: 5px;
-    align-items: center;
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 
-.header-container{
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    border-bottom: 1px solid #e5e7eb;
-    align-items: center;  
+.logo-icon {
+  color: #16a34a;
+  font-size: 3rem;
 }
 
 .nav-items {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+  list-style-type: none;
+  display: flex;
+  gap: 9rem;
 }
 
-.nav-item a{
-    text-decoration: none;
-    color: #6b7280;
+.nav-items a:hover {
+  cursor: pointer;
+  color: #16a34a;
+  text-decoration: underline;
+}
+@media (max-width: 650px) {
+  .nav-items {
+    display: none;
+  }
 }
 
-.logo-icon{
-    color: #16a34a;
-    font-size: 30px;
+.nav-items a {
+  text-decoration: none;
+  color: #6b7280;
 }
 
 .hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 50px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 2rem;
 }
 
 .hero-content {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    flex-basis: 50%;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  flex-basis: 50%;
 }
 
 .hero-text-tag {
-  background: #e5e7eb;  
-  color: #4b5563;
+  background-color: #e5e7eb;
+  color: #6b7280;
   width: fit-content;
-  padding: 2px 10px;
-  border-radius: 20px;
+  padding: 12px 12px;
+  border-radius: 1rem;
 }
 
-.hero-heading {
- font-size: 50px;
+@media (max-width: 400px) {
+  .hero-text-tag {
+    font-size: 1rem;
+  }
+  .hero-btn-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero-heading {
+    font-size: 5rem;
+  }
 }
-.hero-paragraph{
-    color: #4b5563;
+
+@media (max-width: 900px) {
+  .hero-heading {
+    font-size: 3rem;
+  }
 }
-.hero-lists{
+
+.hero-paragraph {
+  color: #6b7280;
+  line-height: 2.4rem;
+}
+
+.hero-lists {
   list-style: none;
-  color: #4b5563;
+  color: #6b7280;
+  line-height: 2.6rem;
 }
 
-.hero-list{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-.hero-list i {
- color: #059669;
+.hero-list {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.outlined-btn {
-    display: inline-block;
-    text-decoration: none;
-    color: black;
-    padding: 10px 20px;
-    border-radius: 7px;
-    border: 1px solid #e5e7eb;
+@media (max-width: 480px) {
+  .hero-list {
+    font-size: 1.2rem;
+  }
+}
+.hero-lists i {
+  color: #16a34a;
 }
 
 .hero-btn-wrapper {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.hero-image-wrapper{
- /* flex-basis: 50%; */
+.outlined-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  padding: 1.2rem 2rem;
+  border-radius: 7px;
+  border: 1px solid #cdcfd4;
+}
+.outlined-btn:hover {
+  background-color: #16a34a;
+  color: #fff;
 }
 
-.hero-image{
-    width: 500px;
-    height: 400px;
-    border-radius: 10px;
+.hero-image-wrapper {
+  flex-basis: 50%;
+  /* Flex basis is used to define the width of a flex item. */
 }
 
-.how-it-works{
-    background-color: #e0f2f1;
-    padding: 50px 20px;
+.hero-image {
+  height: 40rem;
+  border-radius: 8px;
+}
+@media (max-width: 800px) {
+  .hero-image {
+    height: 30rem;
+  }
 }
 
-.how-it-works-title{
-    text-align: center;
+@media (max-width: 700px) {
+  .image-wrapper {
+    display: none;
+  }
+  .hero-content {
+    flex-basis: 100%;
+  }
+}
+/* How Freshbasket works CSS */
+
+.how-it-works {
+  background-color: #c0d4d4;
+  padding: 5rem 2rem;
 }
 
-.how-it-works-title h3 {
-    font-size: 32px;
-    font-weight: 500;
+.title {
+  text-align: center;
 }
 
-.how-it-works-title p {
-    color: #4b5563;
+.title h3 {
+  font-size: 3.2rem;
+  font-weight: bold;
 }
 
-.how-it-works-card-container {
-    display: flex;
-    gap: 30px;
-    margin-top: 40px;
+@media (max-width: 480px) {
+  .title h3 {
+    font-size: 2.3rem;
+  }
 }
 
-.how-it-works-card {
-    background-color: #fff;
-    padding: 30px;
-    display: flex;
+.title p {
+  color: #6b7280;
+  line-height: 2.6rem;
+}
+
+.card-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 4rem;
+}
+
+@media (max-width: 640px) {
+  .card-container,
+  .everything-you-need-card-container {
     flex-direction: column;
-    gap: 15px;
-    border-radius: 10px;
+  }
+}
+.card {
+  background-color: #fff;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  border-radius: 1rem;
 }
 
-.how-it-works-card h4 {
-    font-weight: 600;
-    font-size: 20px;
+@media (max-width: 650px) {
+  .card {
+    gap: 0.5rem;
+  }
+}
 
+.card h4 {
+  font-weight: 600;
+  font-size: 2rem;
 }
 
 .card-icon {
-    display: flex;
-    background-color: #e0f2f1;
-    width: 32px;
-    height: 32px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    color: #059669;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  background: #e0f2f1;
+  border-radius: 5px;
+  color: #16a34a;
 }
 
-.everything-you-need{
-   padding: 50px 20px;
+.everything-you-need {
+  padding: 5rem 2rem;
 }
 
 .everything-you-need-title {
-    text-align: center;
+  text-align: center;
 }
 
 .everything-you-need-title h3 {
-    font-size: 32px;
-    font-weight: 500px;
+  font-size: 3.2rem;
+  font-weight: bold;
+}
+@media (max-width: 480px) {
+  .everything-you-need-title h3 {
+    font-size: 2.3rem;
+  }
 }
 
 .everything-you-need-title p {
-    color: #4b5563;
+  color: #4b5563;
+  line-height: 2.6rem;
 }
 
-.everything-you-need-card-container{
-    display: flex;
-    gap: 30px;
-    margin-top: 40px;
+.everything-you-need-card-container {
+  display: flex;
+  gap: 3rem;
+  margin-top: 4rem;
 }
 
 .everything-you-need-card {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    border-radius: 8px;
-    border: 1px solid #e5e7eb;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
 }
 
 .everything-you-need-card h4 {
-font-weight: 500;
-font-size: 20px;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
 .everything-you-need-card p {
-    color: #4b5563;
+  color: #4b5563;
 }
 
 .everything-you-need-card ul {
-     color: #4b5563;
-     list-style: none;
+  color: #4b5563;
+}
+
+.grocery-shopping {
+  background-color: #c0d4d4;
+  padding: 5rem 2rem;
+}
+
+.grocery-shopping-container {
+  background-color: #16a34a;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 4rem;
+  border-radius: 1.2rem;
+}
+
+.grocery-shopping-container h3 {
+  font-size: 3.2rem;
+  font-weight: bold;
+}
+
+.grocery-shopping-container p {
+  line-height: 2rem;
+}
+
+@media (max-width: 680px) {
+  .grocery-shopping-container h3 {
+    font-size: 2.2rem;
+  }
+  .grocery-shopping-container p {
+    font-size: 1.5rem;
+  }
+}
+
+.grocery-btn {
+  text-decoration: none;
+  background: #fff;
+  color: #000;
+  font-size: 1.4rem;
+  padding: 1.2rem;
+  border-radius: 8px;
+  font-size: 500;
+  margin-top: 1rem;
+}
+
+footer {
+  background: #fff;
+  padding-top: 3rem;
+}
+
+footer div {
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 1.4rem;
+}
+footer hr {
+  border-bottom: 1px solid #e5e7eb;
+}
+@media (max-width: 680px) {
+  footer div {
+    display: block;
+  }
+  footer div p {
+    margin-top: 5px;
+    font-size: 2vmin;
+  }
 }
